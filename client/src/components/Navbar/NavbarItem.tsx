@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { ReactElement } from 'react';
 
-const NavbarItem = () => {
-  return (
-    <div>NavbarItem</div>
-  )
+interface NavbarItemProps {
+  href: string;
+  icon: ReactElement;
 }
 
-export default NavbarItem
+const NavbarItem: React.FC<NavbarItemProps> = ({ href, icon }) => {
+  return (
+    <a className='m-2 p-2 text-xl opacity-50 hover:transform hover:scale-125 hover:opacity-100 transition-all duration-300' href={href}>
+      {icon}
+    </a>
+  );
+};
+
+export default NavbarItem;
